@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bml8t54db1s5t"]
+
+[node name="HUD" type="CanvasLayer" unique_id=1289792197]
+
+[node name="instrucciones" type="Label" parent="." unique_id=1435796778]
+offset_right = 348.0
+offset_bottom = 194.0
+
+[node name="StartButton" type="Button" parent="." unique_id=1084102298]
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="Mensaje" type="Label" parent="." unique_id=854503824]
+offset_right = 40.0
+offset_bottom = 23.0

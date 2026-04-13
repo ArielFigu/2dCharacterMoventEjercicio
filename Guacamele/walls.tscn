@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://csf4mwajfsbo7"]
+
+[ext_resource type="Texture2D" uid="uid://cgu5jocej2xj" path="res://Guacamele/Sprites/wall.jpg" id="1_xwfmd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hcsov"]
+size = Vector2(104, 25)
+
+[node name="Walls" type="Node2D" unique_id=1181990795]
+
+[node name="Wall1" type="StaticBody2D" parent="." unique_id=455928315]
+position = Vector2(53.325, 38.755)
+rotation = -0.008726646
+
+[node name="Sprite2D" type="Sprite2D" parent="Wall1" unique_id=537193772]
+position = Vector2(421.93243, 86.93031)
+rotation = 1.5707964
+scale = Vector2(0.34333327, 0.086249985)
+texture = ExtResource("1_xwfmd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall1" unique_id=1783157040]
+position = Vector2(422.9411, 85.939064)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_hcsov")
+
+[node name="Wall3" type="StaticBody2D" parent="." unique_id=1435941406]
+position = Vector2(53.325, 38.755)
+rotation = -0.008726646
+
+[node name="Sprite2D" type="Sprite2D" parent="Wall3" unique_id=591713167]
+position = Vector2(498.1128, 66.59433)
+rotation = 1.5707964
+scale = Vector2(0.34333327, 0.086249985)
+texture = ExtResource("1_xwfmd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall3" unique_id=28062773]
+position = Vector2(496.0954, 68.57679)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_hcsov")
+
+[node name="Wall2" type="StaticBody2D" parent="." unique_id=948064084]
+position = Vector2(53.325, 38.755)
+rotation = -0.008726646
+
+[node name="Sprite2D" type="Sprite2D" parent="Wall2" unique_id=166302280]
+position = Vector2(560.7612, 107.14256)
+rotation = 1.5707964
+scale = Vector2(0.34333327, 0.086249985)
+texture = ExtResource("1_xwfmd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall2" unique_id=1537603461]
+position = Vector2(563.79614, 103.168915)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_hcsov")

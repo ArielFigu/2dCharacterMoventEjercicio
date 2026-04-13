@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://daoslriyyxeun"]
+
+[ext_resource type="PackedScene" uid="uid://do54tvpkbw70t" path="res://Guacamele/player.tscn" id="1_62kot"]
+[ext_resource type="PackedScene" uid="uid://csf4mwajfsbo7" path="res://Guacamele/walls.tscn" id="2_f812c"]
+[ext_resource type="Script" uid="uid://ce31m1cdnihsp" path="res://Guacamele/player.gd" id="2_q37m6"]
+[ext_resource type="PackedScene" uid="uid://bml8t54db1s5t" path="res://Guacamele/hud.tscn" id="3_q37m6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ex4mi"]
+size = Vector2(545, 42)
+
+[node name="Main" type="Node2D" unique_id=1816324376]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1408123418]
+offset_left = 2.0
+offset_top = -4.0
+offset_right = 1150.0
+offset_bottom = 637.0
+color = Color(0.83215296, 0.75287235, 0.9273877, 1)
+
+[node name="Player" parent="." unique_id=2103035895 instance=ExtResource("1_62kot")]
+position = Vector2(262, 44)
+script = ExtResource("2_q37m6")
+
+[node name="Walls" parent="." unique_id=1181990795 instance=ExtResource("2_f812c")]
+position = Vector2(333, 171)
+
+[node name="HUD" parent="." unique_id=1289792197 instance=ExtResource("3_q37m6")]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=892693628]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=676355786]
+position = Vector2(400.5, 397)
+shape = SubResource("RectangleShape2D_ex4mi")
+debug_color = Color(0.6423204, 0.36441398, 0.9476606, 0.41960785)
