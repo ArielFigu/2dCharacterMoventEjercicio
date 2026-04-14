@@ -1,15 +1,44 @@
 [gd_scene format=3 uid="uid://bml8t54db1s5t"]
 
+[ext_resource type="Script" uid="uid://dirolr4c2qxkx" path="res://Guacamele/hud.gd" id="1_xb1l6"]
+
 [node name="HUD" type="CanvasLayer" unique_id=1289792197]
+script = ExtResource("1_xb1l6")
 
 [node name="instrucciones" type="Label" parent="." unique_id=1435796778]
-offset_right = 348.0
-offset_bottom = 194.0
+offset_left = 11.0
+offset_top = 9.0
+offset_right = 359.0
+offset_bottom = 203.0
+text = "Movimiento flechas direcionales 
+Punch up  UpArrow+\"C\"
+Cabezazo : R|l Arrow+\"C\"
+Jump: SpaceBar
+"
 
 [node name="StartButton" type="Button" parent="." unique_id=1084102298]
-offset_right = 8.0
-offset_bottom = 8.0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -42.5
+offset_right = 42.5
+offset_bottom = 50.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 30
+text = "Inicia"
 
 [node name="Mensaje" type="Label" parent="." unique_id=854503824]
-offset_right = 40.0
-offset_bottom = 23.0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -131.0
+offset_top = 67.0
+offset_right = -47.0
+offset_bottom = 113.0
+grow_horizontal = 2
+scale = Vector2(3.025661, 0.98147804)
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 16
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]

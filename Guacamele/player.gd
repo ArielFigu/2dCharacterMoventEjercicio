@@ -69,7 +69,7 @@ func aplicar_gravedad(delta):
 		elif velocity.y < 0:
 			gravedad *= 0.6#gravedad de saltar
 		else:
-			gravedad *= 2.5
+			gravedad *= 1.3
 
 		velocity.y += gravedad * delta
 
@@ -102,7 +102,7 @@ func saltar_en_pared():
 	if sign(direccion) == sign(normal.x):
 		wall_jump = true
 		velocity.y = JUMP_VELOCITY
-		velocity.x = normal.x * walk_Speed * 1.8
+		velocity.x = normal.x * walk_Speed * 3
 
 		$AnimatedSprite2D.flip_h = velocity.x > 0
 
