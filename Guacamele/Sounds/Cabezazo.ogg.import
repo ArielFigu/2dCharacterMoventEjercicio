@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/Cabezazo.ogg-d8d75d2c75ab5b5206c1a7b1df2a4ebf
 [params]
 
 loop=false
-loop_offset=0
-bpm=0
+loop_offset=0.0
+bpm=0.0
 beat_count=0
 bar_beats=4

@@ -418,4 +418,5 @@ animation = &"punchUP"
 
 [node name="AudioAccion" type="AudioStreamPlayer2D" parent="." unique_id=2119049798]
 
+[connection signal="animation_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_changed"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

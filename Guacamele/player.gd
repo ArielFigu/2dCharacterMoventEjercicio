@@ -69,7 +69,7 @@ func aplicar_gravedad(delta):
 		elif velocity.y < 0:
 			gravedad *= 0.6#gravedad de saltar
 		else:
-			gravedad *= 1.3
+			gravedad *= 2.5
 
 		velocity.y += gravedad * delta
 
@@ -165,13 +165,12 @@ func actualizar_animacion():
 		return
 
 	if not is_on_floor():
-		if velocity.y < 0:
+		if velocity.y < 0 and not atacando:
 			cambiar_animacion("Jump")
 		else:
 			cambiar_animacion("fall")
 		return
-
-	if abs(velocity.x) > 1:
+	if abs(velocity.x) > 1: 
 		cambiar_animacion("walk")
 	else:
 		cambiar_animacion("idle")
@@ -188,4 +187,29 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 	if $AnimatedSprite2D.animation in ["punchUP", "headHit"]:
 		esta_congelado=false
 		atacando=false
-		
+
+
+
+func _on_animated_sprite_2d_animation_changed() -> void:
+	var animacion = $AnimatedSprite2D.animation
+
+	match animacion:
+		"Jump":
+			$AudioAccion.stream = sonido_Jump
+			$AudioAccion.play()
+
+		"fall":
+			$AudioAccion.stream = sonido_Fall
+			$AudioAccion.play()
+
+		"punchUP":
+			$AudioAccion.stream = sonido_PunchUp
+			$AudioAccion.play()
+
+		"headHit":
+			$AudioAccion.stream = sonido_HeadHit
+			$AudioAccion.play()   
+
+		"wallJump":
+			$AudioAccion.stream = sonido_JumpWalk
+			$AudioAccion.play()
