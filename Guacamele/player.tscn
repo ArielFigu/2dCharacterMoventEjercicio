@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://do54tvpkbw70t"]
 
 [ext_resource type="Texture2D" uid="uid://bcs868ad6x80x" path="res://Guacamele/Sprites/guacamele sheet.png" id="1_huk07"]
+[ext_resource type="Script" uid="uid://ce31m1cdnihsp" path="res://Guacamele/player.gd" id="1_wetfk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pn2xu"]
 size = Vector2(132.5, 141.5)
@@ -36,22 +37,6 @@ region = Rect2(3000, 2000, 500, 500)
 [sub_resource type="AtlasTexture" id="AtlasTexture_huk07"]
 atlas = ExtResource("1_huk07")
 region = Rect2(0, 1500, 500, 500)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_wetfk"]
-atlas = ExtResource("1_huk07")
-region = Rect2(2500, 2000, 500, 500)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_281p1"]
-atlas = ExtResource("1_huk07")
-region = Rect2(2000, 2000, 500, 500)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3q6cl"]
-atlas = ExtResource("1_huk07")
-region = Rect2(1500, 2000, 500, 500)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_rhv4n"]
-atlas = ExtResource("1_huk07")
-region = Rect2(1000, 2000, 500, 500)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nbppo"]
 atlas = ExtResource("1_huk07")
@@ -259,18 +244,6 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_wetfk")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_281p1")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3q6cl")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_rhv4n")
-}, {
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_nbppo")
 }, {
 "duration": 1.0,
@@ -319,7 +292,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"headHit",
-"speed": 5.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -353,7 +326,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"punchUP",
-"speed": 5.0
+"speed": 13.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -429,6 +402,7 @@ animations = [{
 [node name="Player" type="CharacterBody2D" unique_id=2103035895]
 position = Vector2(184, 179)
 scale = Vector2(0.695, 0.695)
+script = ExtResource("1_wetfk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=521031778]
 position = Vector2(133.25, 229.25)
@@ -443,3 +417,5 @@ animation = &"punchUP"
 [node name="AudioPasos" type="AudioStreamPlayer2D" parent="." unique_id=1910644979]
 
 [node name="AudioAccion" type="AudioStreamPlayer2D" parent="." unique_id=2119049798]
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

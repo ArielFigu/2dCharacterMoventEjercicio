@@ -24,7 +24,7 @@ func _physics_process(delta: float) -> void:
 	cabezazo()
 	mover()
 
-	limitar_velocidad()
+
 
 	move_and_slide()
 
@@ -112,7 +112,7 @@ func atacar():
 	if Input.is_action_just_pressed("Puño") and Input.is_action_pressed("up") and not atacando:
 		atacando = true
 		esta_congelado = false
-		
+	
 		velocity.y = -490
 		
 		var direccion = -1 if $AnimatedSprite2D.flip_h else 1
@@ -146,8 +146,6 @@ func mover():
 	else:
 		velocity.x = 0
 
-func limitar_velocidad():
-	velocity.y = clamp(velocity.y, -600, 900)
 
 
 
@@ -181,3 +179,13 @@ func actualizar_animacion():
 func cambiar_animacion(nombre):
 	if $AnimatedSprite2D.animation != nombre:
 		$AnimatedSprite2D.play(nombre)
+		
+		
+		
+
+
+func _on_animated_sprite_2d_animation_finished() -> void:
+	if $AnimatedSprite2D.animation in ["punchUP", "headHit"]:
+		esta_congelado=false
+		atacando=false
+		

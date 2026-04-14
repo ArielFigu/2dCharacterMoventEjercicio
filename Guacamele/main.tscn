@@ -2,7 +2,6 @@
 
 [ext_resource type="PackedScene" uid="uid://do54tvpkbw70t" path="res://Guacamele/player.tscn" id="1_62kot"]
 [ext_resource type="PackedScene" uid="uid://csf4mwajfsbo7" path="res://Guacamele/walls.tscn" id="2_f812c"]
-[ext_resource type="Script" uid="uid://ce31m1cdnihsp" path="res://Guacamele/player.gd" id="2_q37m6"]
 [ext_resource type="PackedScene" uid="uid://bml8t54db1s5t" path="res://Guacamele/hud.tscn" id="3_q37m6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ex4mi"]
@@ -19,7 +18,6 @@ color = Color(0.83215296, 0.75287235, 0.9273877, 1)
 
 [node name="Player" parent="." unique_id=2103035895 instance=ExtResource("1_62kot")]
 position = Vector2(255, 82)
-script = ExtResource("2_q37m6")
 
 [node name="Walls" parent="." unique_id=1181990795 instance=ExtResource("2_f812c")]
 position = Vector2(49, -70)
