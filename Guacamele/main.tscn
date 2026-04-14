@@ -18,11 +18,11 @@ offset_bottom = 637.0
 color = Color(0.83215296, 0.75287235, 0.9273877, 1)
 
 [node name="Player" parent="." unique_id=2103035895 instance=ExtResource("1_62kot")]
-position = Vector2(262, 44)
+position = Vector2(255, 82)
 script = ExtResource("2_q37m6")
 
 [node name="Walls" parent="." unique_id=1181990795 instance=ExtResource("2_f812c")]
-position = Vector2(333, 171)
+position = Vector2(49, -70)
 
 [node name="HUD" parent="." unique_id=1289792197 instance=ExtResource("3_q37m6")]
 
