@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://daoslriyyxeun"]
 
 [ext_resource type="PackedScene" uid="uid://do54tvpkbw70t" path="res://Guacamele/player.tscn" id="1_62kot"]
+[ext_resource type="Script" uid="uid://cjfay245qyf3v" path="res://Guacamele/main.gd" id="1_f812c"]
 [ext_resource type="PackedScene" uid="uid://csf4mwajfsbo7" path="res://Guacamele/walls.tscn" id="2_f812c"]
 [ext_resource type="PackedScene" uid="uid://bml8t54db1s5t" path="res://Guacamele/hud.tscn" id="3_q37m6"]
 
@@ -8,6 +9,7 @@
 size = Vector2(545, 42)
 
 [node name="Main" type="Node2D" unique_id=1816324376]
+script = ExtResource("1_f812c")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1408123418]
 offset_left = 2.0
@@ -30,3 +32,5 @@ position = Vector2(49, -70)
 position = Vector2(400.5, 397)
 shape = SubResource("RectangleShape2D_ex4mi")
 debug_color = Color(0.6423204, 0.36441398, 0.9476606, 0.41960785)
+
+[connection signal="start_game" from="HUD" to="." method="_on_hud_start_game"]
