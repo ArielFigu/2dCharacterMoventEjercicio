@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://cjfay245qyf3v" path="res://Guacamele/main.gd" id="1_f812c"]
 [ext_resource type="PackedScene" uid="uid://csf4mwajfsbo7" path="res://Guacamele/walls.tscn" id="2_f812c"]
 [ext_resource type="PackedScene" uid="uid://bml8t54db1s5t" path="res://Guacamele/hud.tscn" id="3_q37m6"]
+[ext_resource type="Texture2D" uid="uid://duisrbc85nop" path="res://icon.svg" id="5_q37m6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ex4mi"]
 size = Vector2(545, 42)
@@ -26,9 +27,14 @@ position = Vector2(49, -70)
 
 [node name="HUD" parent="." unique_id=1289792197 instance=ExtResource("3_q37m6")]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=892693628]
+[node name="Suelo" type="StaticBody2D" parent="." unique_id=892693628]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=676355786]
+[node name="Sprite2D" type="Sprite2D" parent="Suelo" unique_id=1857368123]
+position = Vector2(398, 399)
+scale = Vector2(4.5, 0.4062499)
+texture = ExtResource("5_q37m6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Suelo" unique_id=676355786]
 position = Vector2(400.5, 397)
 shape = SubResource("RectangleShape2D_ex4mi")
 debug_color = Color(0.6423204, 0.36441398, 0.9476606, 0.41960785)

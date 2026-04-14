@@ -213,3 +213,6 @@ func _on_animated_sprite_2d_animation_changed() -> void:
 		"wallJump":
 			$AudioAccion.stream = sonido_JumpWalk
 			$AudioAccion.play()
+		"walk":
+			$AudioAccion.stream = sonido_Walk
+			$AudioAccion.play()

@@ -8,6 +8,7 @@ func _ready() -> void:
 func new_game():
 	player.hide()
 	walls.hide()
+	
 	player.set_physics_process(false)
 	hud.get_node("StartButton").show()
 	hud.get_node("instrucciones").hide()
@@ -18,11 +19,13 @@ func _on_hud_start_game() -> void:
 	player.show()
 	player.set_physics_process(true)
 	walls.show()
+	$Suelo.show()
 	
 	
 func game_over():
 	player.hide()
 	walls.hide()
+	$Suelo.hide()
 	player.set_physics_process(false)
 	player.velocity=Vector2.ZERO
 	player.position = Vector2(100,100)

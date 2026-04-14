@@ -400,8 +400,8 @@ animations = [{
 }]
 
 [node name="Player" type="CharacterBody2D" unique_id=2103035895]
-position = Vector2(184, 179)
-scale = Vector2(0.695, 0.695)
+position = Vector2(194, 179)
+scale = Vector2(0.435, 0.435)
 script = ExtResource("1_wetfk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=521031778]
@@ -413,8 +413,6 @@ position = Vector2(137, 198)
 scale = Vector2(0.48, 0.47)
 sprite_frames = SubResource("SpriteFrames_ccss8")
 animation = &"punchUP"
-
-[node name="AudioPasos" type="AudioStreamPlayer2D" parent="." unique_id=1910644979]
 
 [node name="AudioAccion" type="AudioStreamPlayer2D" parent="." unique_id=2119049798]
 
