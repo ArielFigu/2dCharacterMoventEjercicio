@@ -2,6 +2,7 @@ extends Node2D
 @onready var hud = $HUD
 @onready var player= $Player
 @onready var walls = $Walls
+@onready var arbol = $Arbol
 @onready var color= $ColorRect
 @onready var lluvia= get_node("ColorRect/ParalaxFondo/ParallaxBackground/Lluvia/CPUParticles2D")
 func _ready() -> void:
@@ -10,6 +11,7 @@ func new_game():
 	player.hide()
 	walls.hide()
 	lluvia.hide()
+	arbol.hide()
 	
 	player.set_physics_process(false)
 	hud.get_node("StartButton").show()
@@ -23,6 +25,9 @@ func _on_hud_start_game() -> void:
 	walls.show()
 	$Suelo.show()
 	lluvia.show()
+	arbol.show()
+	arbol.iniciar()
+	
 	
 	
 func game_over():

@@ -1,0 +1,85 @@
+[gd_scene format=3 uid="uid://0ylr2fsn4dex"]
+
+[ext_resource type="Script" uid="uid://da7a07cpif0w5" path="res://arbol.gd" id="1_rcsqm"]
+[ext_resource type="Texture2D" uid="uid://empubb7fb11j" path="res://Guacamele/Sprites/Garden's Forest/TREE_.png" id="2_ci4l3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_utamm"]
+atlas = ExtResource("2_ci4l3")
+region = Rect2(0, 0, 560, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a6x1h"]
+atlas = ExtResource("2_ci4l3")
+region = Rect2(560, 0, 560, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kg568"]
+atlas = ExtResource("2_ci4l3")
+region = Rect2(1120, 0, 560, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uvlja"]
+atlas = ExtResource("2_ci4l3")
+region = Rect2(1680, 0, 560, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pjrsh"]
+atlas = ExtResource("2_ci4l3")
+region = Rect2(2240, 0, 560, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pqbsa"]
+atlas = ExtResource("2_ci4l3")
+region = Rect2(2240, 512, 560, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n0f3h"]
+atlas = ExtResource("2_ci4l3")
+region = Rect2(1680, 512, 560, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4wi78"]
+atlas = ExtResource("2_ci4l3")
+region = Rect2(1120, 512, 560, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y1sxu"]
+atlas = ExtResource("2_ci4l3")
+region = Rect2(560, 512, 560, 512)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6ab6q"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_utamm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a6x1h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kg568")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uvlja")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pjrsh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pqbsa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n0f3h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4wi78")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y1sxu")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="Arbol" type="Node2D" unique_id=1048369746]
+script = ExtResource("1_rcsqm")
+
+[node name="arbolRojo" type="AnimatedSprite2D" parent="." unique_id=1000689576]
+position = Vector2(197.99998, 320.99997)
+scale = Vector2(0.45664462, 0.49707392)
+sprite_frames = SubResource("SpriteFrames_6ab6q")
+animation = &"idle"
+centered = false
