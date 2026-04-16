@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://ce31m1cdnihsp" path="res://Guacamele/player.gd" id="1_wetfk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pn2xu"]
-size = Vector2(132.5, 141.5)
+size = Vector2(103.11496, 156.4425)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_315eu"]
 atlas = ExtResource("1_huk07")
@@ -423,14 +423,14 @@ scale = Vector2(0.435, 0.435)
 script = ExtResource("1_wetfk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=521031778]
-position = Vector2(133.25, 229.25)
+position = Vector2(118.557495, 236.72128)
 shape = SubResource("RectangleShape2D_pn2xu")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=493165908]
 position = Vector2(137, 198)
 scale = Vector2(0.48, 0.47)
 sprite_frames = SubResource("SpriteFrames_ccss8")
-animation = &"punchUP"
+animation = &"headHit"
 
 [node name="AudioAccion" type="AudioStreamPlayer2D" parent="." unique_id=2119049798]
 

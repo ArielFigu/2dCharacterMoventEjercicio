@@ -1,5 +1,7 @@
 extends CharacterBody2D
-
+#entiedo que el error de salto que tenia en el ejercio anterior venia por  como estaba la prormacion de walls , o como estaba su colision...
+# con los tiles no paso .ssollo ajeste coliciones de ellos y el player
+#Nodo EFECTOS BACIO PPOR QUE LO CREE ANTES DE TODO EL PARLAX  NO LO BORRO poque no jode uwu 
 @export_range(0,160.0,1) var walk_Speed: float =100
 const JUMP_VELOCITY = -400.0
 var sonido_Walk = preload("res://Guacamele/Sounds/Correr.ogg")
