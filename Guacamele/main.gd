@@ -3,11 +3,13 @@ extends Node2D
 @onready var player= $Player
 @onready var walls = $Walls
 @onready var color= $ColorRect
+@onready var lluvia= get_node("ColorRect/ParalaxFondo/ParallaxBackground/Lluvia/CPUParticles2D")
 func _ready() -> void:
 	game_over()
 func new_game():
 	player.hide()
 	walls.hide()
+	lluvia.hide()
 	
 	player.set_physics_process(false)
 	hud.get_node("StartButton").show()
@@ -20,12 +22,14 @@ func _on_hud_start_game() -> void:
 	player.set_physics_process(true)
 	walls.show()
 	$Suelo.show()
+	lluvia.show()
 	
 	
 func game_over():
 	player.hide()
 	walls.hide()
 	$Suelo.hide()
+	lluvia.hide()
 	player.set_physics_process(false)
 	player.velocity=Vector2.ZERO
 	player.position = Vector2(100,100)

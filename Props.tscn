@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://cl61qiuj0gbah"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yprdr"]
+
+[node name="Props" type="Node2D" unique_id=1353865098]
+
+[node name="Arboles" type="Node2D" parent="." unique_id=2053904985]
+
+[node name="Arbol rojo" type="AnimatedSprite2D" parent="Arboles" unique_id=1180097099]
+sprite_frames = SubResource("SpriteFrames_yprdr")
+
+[node name="Arbol  morado" type="AnimatedSprite2D" parent="Arboles" unique_id=1133428399]
+sprite_frames = SubResource("SpriteFrames_yprdr")
+
+[node name="Rocas" type="Node2D" parent="." unique_id=341854387]
+
+[node name="Objetos" type="Node2D" parent="." unique_id=1345122872]

@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://bfww2rwcta6hn"]
+
+[node name="Efectos" type="Node2D" unique_id=830171218]
+
+[node name="Fuego" type="Node2D" parent="." unique_id=742326218]
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="Fuego" unique_id=966094996]
+
+[node name="Neblina" type="Node2D" parent="." unique_id=2090375690]
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="Neblina" unique_id=1512799913]

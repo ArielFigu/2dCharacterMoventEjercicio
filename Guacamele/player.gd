@@ -14,6 +14,8 @@ var atacando : = false
 var  esta_congelado : = false 
 var en_pared := false
 var wall_jump := false
+var estaba_en_el_aire := false
+
 func _physics_process(delta: float) -> void:
 	detectar_pared()
 
@@ -24,12 +26,17 @@ func _physics_process(delta: float) -> void:
 	cabezazo()
 	mover()
 
-
-
 	move_and_slide()
 
-	actualizar_animacion()
+	if not is_on_floor():
+		estaba_en_el_aire = true
 
+	if is_on_floor() and estaba_en_el_aire:
+		$CaidaParticulas.global_position = $"Maker caida".global_position
+		$CaidaParticulas.restart()
+		estaba_en_el_aire = false
+
+	actualizar_animacion()
 
 
 func actualizar_direccion():
@@ -87,8 +94,9 @@ func saltar():
 
 		if is_on_floor():
 			velocity.y = JUMP_VELOCITY
+			$SaltoParticulas.global_position = $MakerSalto.global_position
+			$SaltoParticulas.restart()
 			cambiar_animacion("Jump")
-
 func saltar_en_pared():
 	if not en_pared:
 		return
@@ -120,6 +128,14 @@ func atacar():
 		
 		cambiar_animacion("punchUP")
 
+		if direccion > 0:
+			$PuñoParticulas.global_position = $"MakerPuño".global_position
+			$PuñoParticulas.rotation_degrees = 0
+		else:
+			$PuñoParticulas.global_position = $"MakerPuño2".global_position
+			$PuñoParticulas.rotation_degrees = 180
+
+		$PuñoParticulas.restart()
 func cabezazo():
 	if Input.is_action_just_pressed("Puño") and (Input.is_action_pressed("Left") or Input.is_action_pressed("right")) and not atacando:
 		atacando = true

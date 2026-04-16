@@ -399,6 +399,24 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Curve" id="Curve_3q6cl"]
+_data = [Vector2(0, 0.90000004), 0.0, 0.0, 0, 0, Vector2(0.1, 0.90000004), 0.0, 0.0, 0, 0, Vector2(0.5, 0.90000004), 0.0, 0.0, 0, 0, Vector2(1, 0.7), 0.0, 0.0, 0, 0]
+point_count = 4
+metadata/_snap_enabled = true
+
+[sub_resource type="Curve" id="Curve_wetfk"]
+_limits = [0.0, 100.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.6702128, 86.51686), 0.0, 0.0, 0, 0, Vector2(0.96808517, 55.056183), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_281p1"]
+_data = [Vector2(0.15425533, 0.8876405), 0.0, 0.0, 0, 0, Vector2(0.55851066, 0.46067423), 0.0, 0.0, 0, 0, Vector2(0.61170214, 0.42696637), -0.06212852, -0.06212852, 0, 0, Vector2(0.96808517, 0.11235964), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Curve" id="Curve_rhv4n"]
+_data = [Vector2(0.015957452, 0.97752815), 0.0, 0.0, 0, 0, Vector2(0.5053192, 0.7415731), 0.0, 0.0, 0, 0, Vector2(0.78191495, 0.08988774), 0.0, 0.0, 0, 0]
+point_count = 3
+
 [node name="Player" type="CharacterBody2D" unique_id=2103035895]
 position = Vector2(194, 179)
 scale = Vector2(0.435, 0.435)
@@ -415,6 +433,81 @@ sprite_frames = SubResource("SpriteFrames_ccss8")
 animation = &"punchUP"
 
 [node name="AudioAccion" type="AudioStreamPlayer2D" parent="." unique_id=2119049798]
+
+[node name="PuñoParticulas" type="CPUParticles2D" parent="." unique_id=1455279631]
+position = Vector2(82.758606, 177.0115)
+rotation = -0.9599311
+emitting = false
+amount = 15
+lifetime = 0.46
+one_shot = true
+explosiveness = 1.0
+randomness = 0.13
+local_coords = true
+draw_order = 1
+spread = 22.7
+gravity = Vector2(0, 0.065)
+initial_velocity_min = 374.85
+initial_velocity_max = 394.65
+angle_min = 157.3
+angle_max = 157.3
+scale_amount_min = 11.9
+scale_amount_max = 11.9
+scale_amount_curve = SubResource("Curve_3q6cl")
+color = Color(0.7764706, 1, 0.54901963, 1)
+
+[node name="SaltoParticulas" type="CPUParticles2D" parent="." unique_id=177631159]
+position = Vector2(-140.22986, 222.9885)
+emitting = false
+amount = 20
+lifetime = 0.4
+one_shot = true
+explosiveness = 1.0
+randomness = 0.51
+direction = Vector2(0, 1)
+spread = 30.0
+gravity = Vector2(0, 500)
+initial_velocity_min = 120.0
+initial_velocity_max = 120.0
+damping_min = 5.0
+damping_max = 5.0
+damping_curve = SubResource("Curve_wetfk")
+scale_amount_min = 10.0
+scale_amount_max = 10.0
+scale_amount_curve = SubResource("Curve_281p1")
+color = Color(0.8, 0.8, 0.8, 0.8)
+
+[node name="CaidaParticulas" type="CPUParticles2D" parent="." unique_id=1323617135]
+position = Vector2(510.34485, 524.13794)
+emitting = false
+amount = 20
+lifetime = 0.5
+one_shot = true
+speed_scale = 1.63
+explosiveness = 1.0
+randomness = 0.09
+direction = Vector2(0, -1)
+spread = 116.94
+gravity = Vector2(0, 100)
+initial_velocity_min = 180.0
+initial_velocity_max = 180.0
+scale_amount_min = 3.85
+scale_amount_max = 6.2
+scale_amount_curve = SubResource("Curve_rhv4n")
+color = Color(0.57254905, 0.3137255, 0.8666667, 1)
+
+[node name="MakerSalto" type="Marker2D" parent="." unique_id=818149385]
+position = Vector2(133.33333, 271.26437)
+gizmo_extents = 0.0
+
+[node name="MakerPuño" type="Marker2D" parent="." unique_id=424332591]
+position = Vector2(172.41379, 177.01149)
+
+[node name="MakerPuño2" type="Marker2D" parent="." unique_id=556782936]
+position = Vector2(85.05747, 172.41379)
+
+[node name="Maker caida" type="Marker2D" parent="." unique_id=1587416057]
+position = Vector2(133.33333, 271.26434)
 
 [connection signal="animation_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_changed"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
